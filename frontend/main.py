@@ -1,6 +1,5 @@
 from pathlib import Path
 import streamlit as st
-import time
 import requests
 import os
 
@@ -10,17 +9,21 @@ image_file = st.file_uploader("Upload your image")
 image_path = None
 if image_file:
 
-    # saving file
-    image_path = str(Path('..', 'images', image_file.name))
-    if not os.path.exists(image_path):
-        os.makedirs('../images')
+    # Saving file to the shared folder
+    shared_folder_path = Path('shared_folder')
+    image_path = shared_folder_path / image_file.name
+
+    if not shared_folder_path.exists():
+        shared_folder_path.mkdir()
 
     with open(image_path, "wb") as f:
         f.write(image_file.getbuffer())
 
-data = {'path': image_path}
+data = {'path': str(image_path)}  # Sending the full path to the backend
 if st.button('predict'):
-    res = requests.post(url="http://localhost:8000/predict", json=data)
+    backend_url = "http://backend:8000"  # Use the service name as the hostname
+    predict_endpoint = "/predict"
+    res = requests.post(url=f"{backend_url}{predict_endpoint}", json=data)
 
     title_container = st.container()
     col1, col2 = st.columns([15, 5])
@@ -30,7 +33,3 @@ if st.button('predict'):
         with col2:
             st.markdown(f'<h1 style="color: black;">{res.text}</h1>',
                         unsafe_allow_html=True)
-
-# containerize fastapi with docker
-# test
-# https://github.com/Shikha-code36/ImageDetection-FastApi/tree/main readme
