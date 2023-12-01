@@ -11,6 +11,7 @@ This is an image classification app designed to determine the time of day using 
 - Streamlit
 - Torch
 - Pillow
+- Redis OM
 - Matplotlib
 - Requests
 
@@ -33,6 +34,10 @@ This is an image classification app designed to determine the time of day using 
    ```
    docker compose up --build -d
    ```
+
+## Demo
+
+![samples](https://github.com/shakibyzn/image-time-classifier-app/blob/main/demo.png)
 
 ## License
 
