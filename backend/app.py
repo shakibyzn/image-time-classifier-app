@@ -3,11 +3,11 @@ from model import PredictionPipeline
 from pydantic import BaseModel
 from redis_om import HashModel, get_redis_connection
 
-
+# Sign up on https://redis.com/cloud/overview/ and paste your credentials here
 redis = get_redis_connection(
-    host="redis-13090.c55.eu-central-1-1.ec2.cloud.redislabs.com",
+    host="YOUR-HOST",
     port=13090,
-    password="yGKEhSvvF2IDRq738JPGaicSMmJm9E7A",
+    password="YOUR-PASSWORD",
     decode_responses=True
 )
 
