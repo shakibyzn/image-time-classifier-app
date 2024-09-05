@@ -4,3 +4,4 @@ Pillow==9.5.0
 fastapi==0.104.1
 redis-om==0.2.1
 uvicorn==0.24.0.post1
+numpy==1.26.4

@@ -17,3 +17,12 @@ services:
       - ./shared_folder:/backend/shared_folder  # Map the shared folder
     depends_on:
       - frontend
+
+  backend-tests:
+    build: ./backend
+    container_name: backend-tests-container
+    volumes:
+      - ./shared_folder:/backend/shared_folder  # Map the shared folder
+      - ./:/backend/
+    # Command to run pytest
+    command: pytest backend/tests/

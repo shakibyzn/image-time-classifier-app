@@ -8,6 +8,8 @@ COPY . .
 
 RUN pip3 install -r requirements.txt
 
+RUN pip3 install pytest
+
 # expose the ports
 EXPOSE 8000
 
