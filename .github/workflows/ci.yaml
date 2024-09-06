@@ -16,4 +16,4 @@ jobs:
 
       - name: Execute tests in the running services
         run: |
-          docker-compose up --build backend-tests
+          docker-compose exec backend-tests pytest
