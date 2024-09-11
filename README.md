@@ -34,6 +34,11 @@ This is an image classification app designed to determine the time of day using 
    ```
    docker compose up --build -d
    ```
+## Run unittests
+
+```
+docker compose exec backend-container pytest
+```
 
 ## Demo
 
