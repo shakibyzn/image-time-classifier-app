@@ -1,7 +1,6 @@
 # Image Time Classifier App with FastAPI and Streamlit
 
-This is an image classification app designed to determine the time of day using the CLIP model, specifically the `ViT-B/32` variant from torchvision. Users can easily upload an image, and the app will classify it into one of the following time categories: 'morning,' 'noon,' 'afternoon,' 'night,' or 'sunrise or sunset.' The app utilizes FastAPI for handling backend functionalities and Streamlit for a straightforward user interface. Docker and Docker Compose are employed for easy deployment and management of the application.
-
+This is an image classification app designed to determine the time of day using the CLIP model, specifically the `ViT-B/32` variant from torchvision. Users can easily upload an image, and the app will classify it into one of the following time categories: *morning*, *noon*, *afternoon*, *night*, or *sunrise or sunset*. The app utilizes **FastAPI** for handling backend functionalities and **Streamlit** for a straightforward user interface. **Docker** and **Docker Compose** are employed for easy deployment and management of the application.
 
 
 ## Requirements
@@ -34,11 +33,15 @@ This is an image classification app designed to determine the time of day using 
    ```
    docker compose up --build -d
    ```
-## Run unittests
+## Run unit tests
 
 ```
-docker compose exec backend-container pytest
+docker compose exec backend pytest
 ```
+
+## Continuous Integration
+GitHub Actions is configured to automatically run unit tests on the backend service whenever changes are pushed to the repository. The GitHub Actions workflow is defined in the **.github/workflows/ directory**.
+
 
 ## Demo
 
