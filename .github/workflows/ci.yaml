@@ -1,6 +1,9 @@
 name: Model Pipeline Unittest
 
-on: [push]
+on:
+  push:
+    paths-ignore:
+      - 'README.md'
 
 jobs:
   build:
