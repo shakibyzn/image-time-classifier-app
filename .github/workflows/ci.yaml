@@ -13,7 +13,7 @@ jobs:
         uses: hoverkraft-tech/compose-action@v2.0.1
         with:
           compose-file: "./docker-compose.yml"
-          services: backend-tests
+          services: backend
 
       - name: Execute tests in the running services
         run: |
