@@ -1,14 +1,20 @@
-FROM python:3.11.0b4-bullseye
-
-RUN apt update -y
+FROM python:3.11.10-slim
 
 WORKDIR /backend
 
-COPY . .
+# Install git and dependencies needed to build the application
+RUN apt-get update && apt-get install -y \
+    git \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+    
+COPY requirements.txt .
 
 RUN pip3 install -r requirements.txt
 
 RUN pip3 install pytest
+
+COPY . .
 
 # expose the ports
 EXPOSE 8000

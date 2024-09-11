@@ -1,6 +1,4 @@
-FROM python:3.11.0b4-bullseye
-
-RUN apt update -y
+FROM python:3.11.10-slim
 
 WORKDIR /frontend
 
