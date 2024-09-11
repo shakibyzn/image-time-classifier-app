@@ -15,5 +15,6 @@ services:
       - "8000:8000"
     volumes:
       - ./shared_folder:/backend/shared_folder  # Map the shared folder
+      - ./demo.png:/backend/demo.png  # Map the demo.png file to the backend service
     depends_on:
       - frontend
