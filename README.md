@@ -40,7 +40,7 @@ docker compose exec backend pytest
 ```
 
 ## Continuous Integration
-GitHub Actions is configured to automatically run unit tests on the backend service whenever changes are pushed to the repository. The GitHub Actions workflow is defined in the **.github/workflows/ directory**.
+GitHub Actions is configured to automatically run unit tests on the backend service whenever changes are pushed to the repository. The GitHub Actions workflow is defined in the **.github/workflows** directory.
 
 
 ## Demo
